@@ -1,0 +1,23 @@
+[project]
+name = "study-fastapi"
+version = "0.1.0"
+description = "FastAPI 学习模块:从基础路由到鉴权、测试"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic[email]",
+    "sqlalchemy[asyncio]",
+    "aiosqlite",
+    "pyjwt[crypto]",
+    "pwdlib[argon2]",
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+]
+
+[tool.pytest.ini_options]
+# auto 模式:不用在每个 async 测试函数上加 @pytest.mark.asyncio 标记,
+# pytest-asyncio 会自动把 async def 测试函数当作异步测试收集。
+asyncio_mode = "auto"
+testpaths = ["."]
